@@ -1,175 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_gravity="center_horizontal"
-    android:clipToPadding="false"
-    android:padding="40dp"
     tools:context=".MainActivity">
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match" />
 
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Authentication Required"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginLeft="-50dp"
-        android:layout_marginRight="-50dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical">
 
-        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp">
 
-        <Button
-            android:id="@+id/signBtn"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/salad" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:orientation="horizontal"
+
+                >
+
+                <Button
+                    android:id="@+id/signBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="#20030003"
+                    android:onClick="authSignup"
+                    android:text="SIGN UP"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/loginHeaderBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="#030003"
+                    android:onClick="authSignup"
+                    android:text="LOG IN"
+                    android:textColor="#fff" />
+
+            </LinearLayout>
+
+            />
+
+
+        </FrameLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:onClick="authSignCup"
-            android:background="#20030003"
-            android:textColor="#fff"
-            android:layout_gravity="center_horizontal"
-            android:text="SIGN UP"
-            android:layout_weight="1"/>
-        <Button
-            android:id="@+id/loginHeaderBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:onClick="authSignCup"
-            android:background="#030003"
-            android:textColor="#fff"
-            android:layout_gravity="center_horizontal"
-            android:text="LOG IN"
-            android:layout_weight="1"/>
+            android:orientation="vertical"
+            android:padding="40dp"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_gravity="center_horizontal"
+                android:text="CREATE AN ACCOUNT "
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#34A927" />
+
+            <TextView
+                android:id="@+id/txt_exp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:text="To help personalize your experience" />
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView2"
+                android:layout_gravity="center_horizontal"
+                android:layout_toRightOf="@+id/textView2"
+                android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
+                android:hint="Full Name">
+
+                <requestFocus />
+            </EditText>
+
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/edit_name"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+                android:hint="Email"
+                android:inputType="textEmailAddress">
+
+                <requestFocus />
+            </EditText>
+
+            <EditText
+                android:id="@+id/edit_pswd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textView3"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/attemptsLeftTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView3"
+                android:layout_alignLeft="@+id/textView3"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Attempts Left:"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="invisible" />
+
+            <CheckBox
+
+                android:id="@+id/chkagree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="By creating an account you agree to our Terms of Service and Privacy Policy" />
+
+            <Button
+                android:id="@+id/loginBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:background="#030003"
+                android:onClick="authSignup"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Sign up"
+                android:textColor="#fff" />
+
+
+            <TextView
+                android:id="@+id/numberOfRemainingLoginAttemptsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/attemptsLeftTV"
+                android:layout_alignRight="@+id/textView1"
+                android:visibility="invisible" />
+
+            <TextView
+                android:id="@+id/loginLockedTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/loginBtn"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txt_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="10dp"
-        android:text="CREATE AN ACCOUNT "
-        android:maxLines="2"
-        android:textColor="#34A927"
-        android:layout_gravity="center_horizontal"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/txt_exp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="50dp"
-        android:layout_marginLeft="10dp"
-        android:text="To help personalize your experience"
-        android:layout_gravity="center_horizontal"
-    />
-
-    <EditText
-        android:id="@+id/edit_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_gravity="center_horizontal"
-
-        android:layout_toRightOf="@+id/textView2"
-        android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
-        android:hint="Full Name">
-
-        <requestFocus />
-    </EditText>
-
-
-    <EditText
-        android:id="@+id/edit_email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignBottom="@+id/edit_name"
-        android:hint="Email"
-        android:inputType="textEmailAddress">
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/edit_pswd"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_alignBottom="@+id/textView3"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
-    <TextView
-        android:id="@+id/attemptsLeftTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="48dp"
-        android:text="Attempts Left:"
-        android:visibility="invisible"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <CheckBox
-
-        android:id="@+id/chkagree"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="By creating an account you agree to our Terms of Service and Privacy Policy"
-        android:checked="false"/>
-
-    <Button
-        android:id="@+id/loginBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/passwordET"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:onClick="authSignCup"
-        android:background="#030003"
-        android:textColor="#fff"
-        android:layout_gravity="center_horizontal"
-        android:text="Sign up" />
-
-
-    <TextView
-        android:id="@+id/numberOfRemainingLoginAttemptsTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_alignTop="@+id/attemptsLeftTV"
-        android:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/loginLockedTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/loginBtn"
-        android:layout_marginTop="35dp"
-        android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:visibility="invisible" />
-
-</LinearLayout>
+</ScrollView>
